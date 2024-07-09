@@ -1,6 +1,8 @@
 .product-card {
   border-radius: 16px;
   transition: all 0.3s linear;
+  min-width: 240px;
+  // margin: 0 auto;
   &__head {
     position: relative;
     border-radius: 16px;
@@ -35,10 +37,18 @@
       span {
         font-weight: 700;
         font-size: 13px;
+        transition: all .3s linear;
       }
     }
   }
   &:hover {
     box-shadow: 0 0 5px 1px grey;
+    .product-card__body{
+      p{
+        span{
+          color: var(--main-color);
+        }
+      }
+    }
   }
 }

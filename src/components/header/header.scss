@@ -2,119 +2,136 @@
 
 header {
   position: sticky;
-  top:-90px;
-  z-index:15;
+  top: -90px;
+  z-index: 15;
   .top {
     height: 90px;
     width: 100%;
-    // background-color: green;
-    // position: sticky;
     z-index: 10;
-    transition:.4s;
+    transition: 0.4s;
     .top-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      .logo {
-        position: relative;
-        width: 150px;
-        height: 80px;
+      height: 100%;
+      .top-left {
+        height: 100%;
+        .logo {
+          position: relative;
+          display: inline-block;
+          height: 80px;
+          width: 150px;
+        }
       }
-      .navs {
+      .top-right {
         display: flex;
-        gap: 24px;
-        cursor: pointer;
-      }
-      .address {
-        display: flex;
-        gap: 30px;
-        .box {
+        justify-content: space-between;
+        align-items: center;
+        .navs {
           display: flex;
-          align-items: center;
-          gap: 5px;
-          &__icon {
-            height: 40px;
-            width: 40px;
-            position: relative;
-          }
-          &__infos {
-            &__top {
+          gap: 24px;
+          cursor: pointer;
+          a {
+            transition: 0.3s linear;
+            &:hover {
+              color: var(--main-color);
             }
-            &__bottom {
+          }
+        }
+        .address {
+          display: flex;
+          gap: 30px;
+          .box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            &__icon {
+              height: 40px;
+              width: 40px;
+              position: relative;
+            }
+            &__infos {
+              &__top {
+                font-size: 12px;
+                font-weight: 400;
+                opacity: 0.6;
+              }
+              &__bottom {
+                font-size: 15px;
+                font-weight: 700;
+              }
             }
           }
         }
       }
     }
   }
-  // .hide {
-  //   top: -100px;
-  //   transition:.4s;
-  // }
   .bottom {
     height: 90px;
     background-color: white;
-    // position: sticky;
-    // top: 0;
     display: flex;
     width: 100%;
     align-items: center;
     z-index: 10;
-    transition: .4s;
+    transition: 0.4s;
     .bottom-container {
       display: flex;
-      justify-content: space-between;
       height: 46px;
-      align-content: center;
-      .bottom__left {
-        display: flex;
-        gap: 5px;
-        .navBtns {
-          display: flex;
-          padding: 14px 24px;
-          background-color: #0000000d;
-          border-radius: 8px;
-          font-size: 15px;
-          transition: .4s;
-          &:first-child {
-            margin-right: 45px;
-          }
-          &:hover {
-            background-color: var(--main-color-opacity);
-            color: var(--main-color);
-          }
-        }
+      .bottom-left{
         .active {
           background-color: var(--main-color-opacity);
           color: var(--main-color);
         }
       }
-      .bottom__right {
+      .bottom-right {
         display: flex;
-        padding: 2px;
-        background-color: var(--main-color);
-        border-radius: 8px;
-        button {
-          padding: 12px 22px;
-        }
-        .like-btn {
-          border-radius: 8px;
+        justify-content: space-between;
+        align-items: center;
+        .bottom-nav {
           display: flex;
-          align-items: center;
           gap: 5px;
-          color: white;
+          .active {
+            background-color: var(--main-color-opacity);
+            color: var(--main-color);
+          }
         }
-        .cart-btn {
-          border-radius: 6px;
+        .two-btn {
           display: flex;
-          align-items: center;
-          background-color: white;
+          padding: 2px;
+          background-color: var(--main-color);
+          border-radius: 8px;
+          button {
+            padding: 12px 22px;
+          }
+          .like-btn {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+          }
+          .cart-btn {
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+          }
         }
       }
     }
   }
-  .show {
-    top: 0;
-    transition:.4s;
+}
+
+.nav-btns {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: #0000000d;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.4s;
+  width: fit-content;
+  &:hover {
+    background-color: var(--main-color-opacity);
+    color: var(--main-color);
   }
 }

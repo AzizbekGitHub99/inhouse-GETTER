@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import NavLink from "../navlink";
 
@@ -14,55 +14,41 @@ import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
 
 const Header = () => {
-  const [isShrunk, setIsShrunk] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setIsShrunk(true);
-      } else {
-        setIsShrunk(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <header>
       <div className="top">
         <div className="top-container container">
-          <div className="logo">
-            <Image src={logo} fill priority alt="Logo" />
+          <div className="top-left left">
+            <Link href="/" className="logo">
+              <Image src={logo} fill priority alt="Logo" />
+            </Link>
           </div>
-          <div className="navs">
-            <a href="/about">О нас</a>
-            <a href="/about">О доставке</a>
-            <a href="/about">Помощь</a>
-            <a href="/about">Контакты</a>
-          </div>
-          <div className="address">
-            <div className="box">
-              <div className="box__icon">
-                <Image src={phone} fill priority alt="phone" />
-              </div>
-              <div className="box__infos">
-                <div className="box__infos__top">Приём звонков 24/7</div>
-                <div className="box__infos__bottom">+998 90 000 00 00</div>
-              </div>
+          <div className="top-right right">
+            <div className="navs">
+              <a href="/about">О нас</a>
+              <a href="/about">О доставке</a>
+              <a href="/about">Помощь</a>
+              <a href="/about">Контакты</a>
             </div>
-            <div className="box">
-              <div className="box__icon">
-                <Image src={mark} fill priority alt="mark" />
+            <div className="address">
+              <div className="box">
+                <div className="box__icon">
+                  <Image src={phone} fill priority alt="phone" />
+                </div>
+                <div className="box__infos">
+                  <div className="box__infos__top">Приём звонков 24/7</div>
+                  <div className="box__infos__bottom">+998 90 000 00 00</div>
+                </div>
               </div>
-              <div className="box__infos">
-                <div className="box__infos__top">Приходите в гости</div>
-                <div className="box__infos__bottom">
-                  р.Нурафшон, ул.Фаргона 12Б
+              <div className="box">
+                <div className="box__icon">
+                  <Image src={mark} fill priority alt="mark" />
+                </div>
+                <div className="box__infos">
+                  <div className="box__infos__top">Приходите в гости</div>
+                  <div className="box__infos__bottom">
+                    р.Нурафшон, ул.Фаргона 12Б
+                  </div>
                 </div>
               </div>
             </div>
@@ -71,26 +57,31 @@ const Header = () => {
       </div>
       <div className="bottom">
         <div className="bottom-container container">
-          <div className="bottom__left">
-            <NavLink className="navBtns" href="/catalog">
+          <div className="bottom-left left">
+            <NavLink className="nav-btns" href="/catalog">
               <Image src={circles} width={18} height={18} alt="circles" />
               Каталог продуктов
             </NavLink>
-            <NavLink className="navBtns" href="#">
+          </div>
+          <div className="bottom-right right">
+            <div className="bottom-nav">
+            <NavLink className="nav-btns" href="#">
               Для кухни
             </NavLink>
-            <NavLink className="navBtns" href="#">
+            <NavLink className="nav-btns" href="#">
               Аксессуары
             </NavLink>
-            <NavLink className="navBtns" href="#">
+            <NavLink className="nav-btns" href="#">
               Посуды
             </NavLink>
-          </div>
-          <div className="bottom__right">
+
+            </div>
+            <div className="two-btn">
             <button className="like-btn">
               <Image src={heart} width={13} height={12} alt="heart" /> Избранные
             </button>
             <button className="cart-btn">Оформить заказ</button>
+            </div>
           </div>
         </div>
       </div>

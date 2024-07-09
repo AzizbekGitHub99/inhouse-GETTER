@@ -3,110 +3,159 @@
 import { Fragment } from "react";
 import Image from "next/image";
 
+import rect from "@/assets/icons/rectangle.svg";
+import list from "@/assets/icons/list.svg";
+import img from "@/assets/images/home/hero-card.jpg";
+
+import "./catalog.scss";
 import ProductCard from "@/components/productCard";
 import SwiperDis from "@/components/swiper";
 import Email from "@/components/email";
 
-import "./home.scss";
-
-import img from "@/assets/images/home/hero-card.jpg";
-import adv from "@/assets/images/home/advertising.png";
-
-export default function Home() {
-  const arr = Array.from({ length: 10 }).map((el) => {
+const CatalogPage = () => {
+  const arr = Array.from({ length: 12 }).map((el) => {
     el;
   });
-
   return (
     <Fragment>
-      <section className="hero">
-        <div className="container">
-          <h1 className="hero__title">Удивительные иностранные продукты</h1>
-          <div className="hero__cards">
-            <div className="hero__cards__card">
-              <div className="image-box">
-                <Image
-                  src={img}
-                  alt="Picture of the author"
-                  fill
-                  priority
-                  objectFit="cover"
-                />
-              </div>
-              <p>Time is the capital of your life, so spend it wisely.</p>
-              <svg
-                width="25"
-                height="24"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.5 12H24.5M24.5 12C18.74 12 12.5 8.16 12.5 0M24.5 12C18.74 12 12.5 16.32 12.5 24"
-                  stroke="#EE1C25"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-            <div className="hero__cards__card">
-              <div className="image-box">
-                <Image
-                  src={img}
-                  alt="Picture of the author"
-                  fill
-                  priority
-                  objectFit="cover"
-                />
-              </div>
-              <p>Time is the capital of your life, so spend it wisely.</p>
-              <svg
-                width="25"
-                height="24"
-                viewBox="0 0 25 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.5 12H24.5M24.5 12C18.74 12 12.5 8.16 12.5 0M24.5 12C18.74 12 12.5 16.32 12.5 24"
-                  stroke="#EE1C25"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
+      <section className="main-section">
+        <div className="container flex">
+          <div className="aside left">
+            <h3>Фильтр</h3>
+            <ul>
+              Категории
+              <li>Органайзеры для кухни</li>
+              <li>Ножи и точилки</li>
+              <li>Сушилки для посуды</li>
+              <li>Кухонные инструменты</li>
+              <li>Терки и пилеры</li>
+              <li>Разделочные доски</li>
+              <li>Прочие аксессуары для кухни</li>
+            </ul>
+            <ul>
+              Материалы
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Полипропилен
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Пластик
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Фарфор
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Нержавеющая сталь
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Дерево
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Термопластичная резина
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center mb-4">
+                  <input
+                    id="default-checkbox"
+                    type="checkbox"
+                    value=""
+                    className="w-4 h-4 "
+                  />
+                  <label htmlFor="default-checkbox" className="ms-2">
+                    Нейлон
+                  </label>
+                </div>
+              </li>
+            </ul>
           </div>
-        </div>
-      </section>
-      <section className="last-products">
-        <div className="container">
-          <h2 className="title">Наши последние продукты</h2>
-          <p className="subtitle">
-            Теперь можно купить замечательные и уникальные блюда иностранной
-            кухни
-          </p>
-          <div className="last-products__wrapper">
-            {arr.map((el, i) => (
-              <ProductCard key={i} />
-            ))}
-          </div>
-          <button className="last-products__wrapper__all-btn">
-            Посмотреть все
-          </button>
-        </div>
-      </section>
-      <section className="advertising">
-        <div className="container">
-          <div className="advertising__box">
-            <div className="advertising__box__left">
-              <h1>Наши новейшие ковры!</h1>
-              <p>
-                В каждый ковер вложена душа мастеров, и все это <br /> именно
-                для вас.
-              </p>
+          <div className="mainside right">
+            <div className="controller">
+              <div className="selection-box">
+                <span>Сортировать по:</span>
+                <select name="" id="">
+                  <option selected value="">
+                    Возрастание цен
+                  </option>
+                  <option value="">Уменьшение цен</option>
+                  <option value="">A-Z</option>
+                  <option value="">Z-A</option>
+                </select>
+              </div>
+              <div className="card-types">
+                <button className="card-type">
+                  <Image src={rect} width={16} height={16} alt="rect" />
+                  Карточки
+                </button>
+                <button className="card-type">
+                  <Image src={list} width={16} height={16} alt="rect" /> Лист
+                </button>
+              </div>
             </div>
-            <div className="advertising__box__right">
-              <p>от 499 000.00 uz</p>
+            <div className="wrapper">
+              {arr.map((el, i) => (
+                <ProductCard key={i} />
+              ))}
+              <button className="wrapper__all-btn">Посмотреть все</button>
             </div>
-            <Image src={adv} fill alt="adv" />
           </div>
         </div>
       </section>
@@ -192,4 +241,6 @@ export default function Home() {
       </div>
     </Fragment>
   );
-}
+};
+
+export default CatalogPage;

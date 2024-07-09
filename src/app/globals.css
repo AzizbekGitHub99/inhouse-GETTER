@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -21,6 +21,19 @@ input {
   border: none;
 }
 
+.title {
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E6E6E6;
+}
+.subtitle {
+  font-size: 16px;
+  color: var(--subtitle);
+  margin-bottom: 45px;
+}
+
 :root {
   --main-color: rgb(238, 28, 37);
   --main-color-opacity: rgb(238, 28, 37, 0.1);
@@ -29,6 +42,19 @@ input {
   /* --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255; */
+}
+
+.container {
+  margin: 0 auto;
+  width: 1360px;
+
+}
+.container .left {
+  width: 18%;
+}
+.container .right {
+  width: 82%;
+  padding-left: 45px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -48,9 +74,3 @@ input {
     )
     rgb(var(--background-start-rgb));
 } */
-
-.container {
-  width: 1360px;
-  margin: 0 auto;
-  position: relative;
-}
