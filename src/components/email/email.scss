@@ -1,0 +1,32 @@
+@import "../../app/globals.css";
+.email {
+  border-radius: 12px;
+  background-color: #efefef;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &__description {
+    font-size: 20px;
+  }
+  &__form {
+    display: flex;
+    gap:10px;
+    input {
+      padding: 17px 22px;
+      border-radius: 12px;
+    }
+    button {
+      border-radius: 12px;
+      background-color: var(--main-color);
+      color: white;
+      padding: 17px;
+      width: 185px;
+      transition: all .3s linear;
+      &:hover{
+        transform: scale(0.9);
+        // box-shadow: 0 0 5px 2px var(--main-color)
+      }
+    }
+  }
+}

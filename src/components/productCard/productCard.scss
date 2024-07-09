@@ -1,0 +1,44 @@
+.product-card {
+  border-radius: 16px;
+  transition: all 0.3s linear;
+  &__head {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 340px;
+    max-width: 320px;
+    min-width: 240px;
+    width: 100%;
+  }
+  .dis{
+    &::after {
+      content: "Скидка: 10%";
+      top: 20px;
+      left: 20px;
+      color: #ffff00;
+      border-radius: 8px;
+      width: 95px;
+      height: 28px;
+      position: absolute;
+      line-height: 28px;
+      text-align: center;
+      background-color: var(--main-color);
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    p {
+      span {
+        font-weight: 700;
+        font-size: 13px;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 5px 1px grey;
+  }
+}

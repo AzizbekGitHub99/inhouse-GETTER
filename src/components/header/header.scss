@@ -1,0 +1,120 @@
+@import "../../app/globals.css";
+
+header {
+  position: sticky;
+  top:-90px;
+  z-index:15;
+  .top {
+    height: 90px;
+    width: 100%;
+    // background-color: green;
+    // position: sticky;
+    z-index: 10;
+    transition:.4s;
+    .top-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        position: relative;
+        width: 150px;
+        height: 80px;
+      }
+      .navs {
+        display: flex;
+        gap: 24px;
+        cursor: pointer;
+      }
+      .address {
+        display: flex;
+        gap: 30px;
+        .box {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          &__icon {
+            height: 40px;
+            width: 40px;
+            position: relative;
+          }
+          &__infos {
+            &__top {
+            }
+            &__bottom {
+            }
+          }
+        }
+      }
+    }
+  }
+  // .hide {
+  //   top: -100px;
+  //   transition:.4s;
+  // }
+  .bottom {
+    height: 90px;
+    background-color: white;
+    // position: sticky;
+    // top: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    z-index: 10;
+    transition: .4s;
+    .bottom-container {
+      display: flex;
+      justify-content: space-between;
+      height: 46px;
+      align-content: center;
+      .bottom__left {
+        display: flex;
+        gap: 5px;
+        .navBtns {
+          display: flex;
+          padding: 14px 24px;
+          background-color: #0000000d;
+          border-radius: 8px;
+          font-size: 15px;
+          transition: .4s;
+          &:first-child {
+            margin-right: 45px;
+          }
+          &:hover {
+            background-color: var(--main-color-opacity);
+            color: var(--main-color);
+          }
+        }
+        .active {
+          background-color: var(--main-color-opacity);
+          color: var(--main-color);
+        }
+      }
+      .bottom__right {
+        display: flex;
+        padding: 2px;
+        background-color: var(--main-color);
+        border-radius: 8px;
+        button {
+          padding: 12px 22px;
+        }
+        .like-btn {
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: white;
+        }
+        .cart-btn {
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          background-color: white;
+        }
+      }
+    }
+  }
+  .show {
+    top: 0;
+    transition:.4s;
+  }
+}

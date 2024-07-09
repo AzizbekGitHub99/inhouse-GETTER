@@ -1,0 +1,56 @@
+footer {
+  margin-top: 110px;
+  .top {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    &__left {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 700;
+      font-size: 40px;
+    }
+    &__right {
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+  .mid {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    &__left {
+      max-width: 560px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      height: 120px;
+      display: flex;
+      font-size: 16px;
+      gap: 24px 60px;
+    }
+    &__right {
+      text-align: end;
+      p{
+        font-size: 16px;
+      }
+      .comunity{
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 24px;
+        a{
+          cursor: pointer;
+          &:hover{
+            svg{
+              transform: scale(1.2);
+            }
+          }
+          svg{
+            transition: all .3s linear;
+
+          }
+        }
+
+      }
+    }
+  }
+}
