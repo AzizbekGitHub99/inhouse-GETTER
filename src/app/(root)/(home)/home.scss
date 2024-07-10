@@ -23,6 +23,9 @@
             transform: scale(1.1);
           }
         }
+        svg{
+          margin-left: 20px;
+        }
       }
       .image-box {
         border-radius: 18px;
@@ -42,6 +45,7 @@
       }
       svg {
         cursor: pointer;
+        transition: .3s linear;
       }
     }
   }

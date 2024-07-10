@@ -1,6 +1,7 @@
 import { FormEvent } from "react";
 import localFont from "next/font/local";
 import Image from "next/image";
+import Link from "next/link";
 
 import "./productCard.scss";
 
@@ -17,14 +18,9 @@ const ProductCard: React.FC<CardProps> = ({ dis }) => {
   const toCart = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const elements = e.currentTarget?.elements;
-
-    // const user = {
-    //   username: (elements[0] as HTMLInputElement)?.value,
-    //   password: (elements[1] as HTMLInputElement)?.value,
-    // };
   };
   return (
-    <a href="#" className="product-card">
+    <Link href="products/1" className="product-card">
       <div className={dis ? "product-card__head dis" : "product-card__head"}>
         <Image
           src={img}
@@ -53,7 +49,7 @@ const ProductCard: React.FC<CardProps> = ({ dis }) => {
           </svg>
         </span>
       </div>
-    </a>
+    </Link>
   );
 };
 

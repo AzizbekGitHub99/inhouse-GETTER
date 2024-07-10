@@ -1,3 +1,5 @@
+@import "../../app/globals.css";
+
 .product-card {
   border-radius: 16px;
   transition: all 0.3s linear;
@@ -11,6 +13,9 @@
     max-width: 320px;
     min-width: 240px;
     width: 100%;
+    img{
+      transition: transform .3s linear;
+    }
   }
   .dis{
     &::after {
@@ -42,12 +47,14 @@
     }
   }
   &:hover {
-    box-shadow: 0 0 5px 1px grey;
-    .product-card__body{
-      p{
-        span{
-          color: var(--main-color);
-        }
+    .product-card__head{
+      img{
+        transform: scale(1.1);
+      }
+    }
+    p{
+      span{
+        color: var(--main-color);
       }
     }
   }

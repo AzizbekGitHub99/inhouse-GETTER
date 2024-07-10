@@ -99,6 +99,10 @@ header {
           padding: 2px;
           background-color: var(--main-color);
           border-radius: 8px;
+          transition: all .3s linear;
+          &:hover{            
+            background-color: rgba(238, 28, 37, .8);
+          }
           button {
             padding: 12px 22px;
           }

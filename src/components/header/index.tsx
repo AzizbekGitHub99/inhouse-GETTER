@@ -31,7 +31,7 @@ const Header = () => {
               <a href="/about">Контакты</a>
             </div>
             <div className="address">
-              <div className="box">
+              <Link href="+998908205575" className="box">
                 <div className="box__icon">
                   <Image src={phone} fill priority alt="phone" />
                 </div>
@@ -39,8 +39,8 @@ const Header = () => {
                   <div className="box__infos__top">Приём звонков 24/7</div>
                   <div className="box__infos__bottom">+998 90 000 00 00</div>
                 </div>
-              </div>
-              <div className="box">
+              </Link>
+              <Link href="https://www.google.com/maps/@41.3149818,69.3289586,21z?entry=ttu" target="_blank" className="box">
                 <div className="box__icon">
                   <Image src={mark} fill priority alt="mark" />
                 </div>
@@ -50,7 +50,7 @@ const Header = () => {
                     р.Нурафшон, ул.Фаргона 12Б
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
