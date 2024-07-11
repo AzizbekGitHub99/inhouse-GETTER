@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import Image from "next/image";
 
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -7,6 +7,7 @@ import prod from "@/assets/images/home/product-card.jpg";
 
 import "./singleProduct.scss";
 import SwiperDis from "@/components/swiper";
+import Zoom from '@/components/imageZoom/ImageInnerZoom'
 
 const SingleProductPage = () => {
   return (
@@ -15,7 +16,8 @@ const SingleProductPage = () => {
       <section className="product">
         <div className="container product-container">
           <div className="product-container__img">
-            <Image src={prod} fill priority alt="prod" objectFit="contain" />
+            <Zoom src={{prod:prod, alt: "Product"}}/>
+            {/* <Image src={prod} fill priority alt="prod" objectFit="contain" /> */}
           </div>
           <div className="product-container__body">
             <h2>Коллекционные состав для приготовлении</h2>
