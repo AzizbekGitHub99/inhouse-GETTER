@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./footer.scss";
 
 
@@ -18,14 +19,15 @@ const Footer = () => {
     <footer>
       <div className="container">
         <div className="top">
-          <a href="#" className="top__left">
+          <Link href="/" className="top__left">
             In House
-          </a>
+          </Link>
           <span className="top__right">+998 90 123-45-67</span>
         </div>
         <div className="mid">
           <div className="mid__left">
             {navs.map((el, i) => (
+              
               <p key={i}>{el}</p>
             ))}
           </div>
@@ -33,7 +35,7 @@ const Footer = () => {
             <p>г.Ташкент, р.Темур Малик, ул.Фарабий 150А</p>
             <p>info@gmail.com</p>
             <div className="comunity">
-              <a href="#">
+              <Link href="#">
                 <svg
                   width="24"
                   height="24"
@@ -56,8 +58,8 @@ const Footer = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="#">
                 <svg
                   width="24"
                   height="24"
@@ -73,8 +75,8 @@ const Footer = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="#">
                 <svg
                   width="24"
                   height="24"
@@ -90,8 +92,8 @@ const Footer = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="#">
                 <svg
                   width="24"
                   height="24"
@@ -107,8 +109,8 @@ const Footer = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="#">
                 <svg
                   width="24"
                   height="24"
@@ -124,7 +126,7 @@ const Footer = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
