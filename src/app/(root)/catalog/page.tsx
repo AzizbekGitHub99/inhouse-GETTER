@@ -131,13 +131,13 @@ const CatalogPage = () => {
             <div className="controller">
               <div className="selection-box">
                 <span>Сортировать по:</span>
-                <select name="" id="">
-                  <option selected value="">
+                <select defaultValue="1" name="" id="">
+                  <option value="1">
                     Возрастание цен
                   </option>
-                  <option value="">Уменьшение цен</option>
-                  <option value="">A-Z</option>
-                  <option value="">Z-A</option>
+                  <option value="2">Уменьшение цен</option>
+                  <option value="3">A-Z</option>
+                  <option value="4">Z-A</option>
                 </select>
               </div>
               <div className="card-types">

@@ -30,7 +30,6 @@ export default function Home() {
                   alt="Picture of the author"
                   fill
                   priority
-                  objectFit="cover"
                 />
               </div>
               <p>Time is the capital of your life, so spend it wisely.</p>
@@ -55,7 +54,6 @@ export default function Home() {
                   alt="Picture of the author"
                   fill
                   priority
-                  objectFit="cover"
                 />
               </div>
               <p>Time is the capital of your life, so spend it wisely.</p>
@@ -133,7 +131,6 @@ export default function Home() {
                   alt="Picture of the author"
                   fill
                   priority
-                  objectFit="cover"
                 />
               </div>
               <p>
@@ -162,7 +159,6 @@ export default function Home() {
                   alt="Picture of the author"
                   fill
                   priority
-                  objectFit="cover"
                 />
               </div>
               <p>

@@ -1,10 +1,9 @@
 "use client";
-
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import NavLink from "../navlink";
-
 import "./header.scss";
 
 import logo from "@/assets/images/logo/Logo.svg";
@@ -14,6 +13,7 @@ import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header>
       <div className="top">
@@ -25,13 +25,13 @@ const Header = () => {
           </div>
           <div className="top-right right">
             <div className="navs">
-              <a href="/about">О нас</a>
-              <a href="/about">О доставке</a>
-              <a href="/about">Помощь</a>
-              <a href="/about">Контакты</a>
+              <Link href="/about">О нас</Link>
+              <Link href="/about">О доставке</Link>
+              <Link href="/about">Помощь</Link>
+              <Link href="/about">Контакты</Link>
             </div>
             <div className="address">
-              <Link href="+998908205575" className="box">
+              <Link href="tel:+998908205575" className="box">
                 <div className="box__icon">
                   <Image src={phone} fill priority alt="phone" />
                 </div>
@@ -40,7 +40,11 @@ const Header = () => {
                   <div className="box__infos__bottom">+998 90 000 00 00</div>
                 </div>
               </Link>
-              <Link href="https://www.google.com/maps/@41.3149818,69.3289586,21z?entry=ttu" target="_blank" className="box">
+              <Link
+                href="https://www.google.com/maps/@41.3149818,69.3289586,21z?entry=ttu"
+                target="_blank"
+                className="box"
+              >
                 <div className="box__icon">
                   <Image src={mark} fill priority alt="mark" />
                 </div>
@@ -65,23 +69,54 @@ const Header = () => {
           </div>
           <div className="bottom-right right">
             <div className="bottom-nav">
-            <NavLink className="nav-btns" href="#">
-              Для кухни
-            </NavLink>
-            <NavLink className="nav-btns" href="#">
-              Аксессуары
-            </NavLink>
-            <NavLink className="nav-btns" href="#">
-              Посуды
-            </NavLink>
-
+              <NavLink className="nav-btns" href="#">
+                Для кухни
+              </NavLink>
+              <NavLink className="nav-btns" href="#">
+                Аксессуары
+              </NavLink>
+              <NavLink className="nav-btns" href="#">
+                Посуды
+              </NavLink>
             </div>
             <div className="two-btn">
-            <button className="like-btn">
-              <Image src={heart} width={13} height={12} alt="heart" /> Избранные
-            </button>
-            <button className="cart-btn">Оформить заказ</button>
+              <button className="like-btn">
+                <Image src={heart} width={13} height={12} alt="heart" />{" "}
+                Избранные
+              </button>
+              <button className="cart-btn">Оформить заказ</button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="under">
+        <div className="container under-container">
+          <Link href="/" className="logo">
+            <Image src={logo} fill priority alt="Logo" />
+          </Link>
+          <div onClick={ ()=> setIsMenuOpen(!isMenuOpen)} className="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
+            <ul>
+              <li onClick={() =>setIsMenuOpen(false)}>
+                <NavLink href="/">Главная</NavLink>
+              </li>
+              <li onClick={() =>setIsMenuOpen(false)}>
+                <NavLink href="/about">О нас</NavLink>
+              </li>
+              <li onClick={() =>setIsMenuOpen(false)}>
+                <NavLink href="/catalog">Каталог продуктов</NavLink>
+              </li>
+              <li onClick={() =>setIsMenuOpen(false)}>
+                <NavLink href="/likes">Избранные</NavLink>
+              </li>
+              <li onClick={() =>setIsMenuOpen(false)}>
+                <NavLink href="/cart">Оформить заказ</NavLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

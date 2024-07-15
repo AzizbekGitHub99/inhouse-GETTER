@@ -27,7 +27,6 @@ const ProductCard: React.FC<CardProps> = ({ dis }) => {
           alt="Picture of the author"
           fill
           priority
-          objectFit="cover"
         />
       </div>
       <div className="product-card__body">

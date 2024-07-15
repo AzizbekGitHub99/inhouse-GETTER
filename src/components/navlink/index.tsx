@@ -12,7 +12,6 @@ const NavLink = ({
   ...props
 }: ChildrenType & { href: string; className?: string }) => {
   const pathname = usePathname();
-
   return (
     <Link
       className={pathname === href ? `active ${className}` : className}

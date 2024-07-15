@@ -7,8 +7,7 @@ interface InputProps {
 
 const Input:React.FC<InputProps> = ({pl}) => {
   const [value, setValue] = useState("");
-
-  return <input placeholder={pl} type="text" />;
+  return <input placeholder={pl} type="number" />;
 };
 
 export default Input;

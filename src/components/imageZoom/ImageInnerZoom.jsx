@@ -32,7 +32,7 @@ const Zoom = ({ src:{prod, alt} }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
     >
-      <Image ref={imageRef} fill src={prod.src} alt={alt} objectFit="contain" className="img" />
+      <Image ref={imageRef} fill src={prod.src} alt={alt} className="img" />
     </div>
   );
 };

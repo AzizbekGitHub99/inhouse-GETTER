@@ -15,6 +15,7 @@
     width: 100%;
     img{
       transition: transform .3s linear;
+      object-fit: cover;
     }
   }
   .dis{
