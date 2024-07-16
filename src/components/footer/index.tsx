@@ -17,24 +17,23 @@ const Footer = () => {
   ];
   return (
     <footer>
-      <div className="container">
-        <div className="top">
-          <Link href="/" className="top__left">
+      <div className="container footer-container">
+        <div className="footer__left">
+          <Link href="/" className="footer__title">
             In House
           </Link>
-          <span className="top__right">+998 90 123-45-67</span>
-        </div>
-        <div className="mid">
-          <div className="mid__left">
+          <div className="footer-navs">
             {navs.map((el, i) => (
-              
               <p key={i}>{el}</p>
             ))}
           </div>
-          <div className="mid__right">
+        </div>
+        <div className="footer__right">
+          <h2 className="footer__title">+998 90 123-45-67</h2>
+          <div className="footer__address">
             <p>г.Ташкент, р.Темур Малик, ул.Фарабий 150А</p>
             <p>info@gmail.com</p>
-            <div className="comunity">
+            <div className="socials">
               <Link href="#">
                 <svg
                   width="24"
@@ -130,7 +129,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );

@@ -1,114 +1,124 @@
 footer {
   margin-top: 110px;
-  .top {
-    margin-bottom: 40px;
+  .footer-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px;
-    &__left {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-      font-weight: 700;
-      font-size: 40px;
-      display: inline-block;
-    }
-    &__right {
-      font-weight: 700;
-      font-size: 24px;
-    }
-  }
-  .mid {
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: space-between;
-    &__left {
-      max-width: 560px;
-      width: 80%;
-      flex-wrap: wrap;
-      flex-direction: column;
-      height: 120px;
-      display: flex;
-      font-size: 16px;
-      gap: 24px 60px;
-    }
-    &__right {
-      text-align: end;
-      p {
-        font-size: 16px;
+    gap: 50px;
+    padding-bottom: 40px;
+    .footer__left {
+      .footer__title {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        display: inline-block;
+        line-height: 48px;
+        margin-bottom: 38px;
       }
-      .comunity {
-        margin-top: 30px;
+      .footer-navs {
+        padding-left: 20px;
+        max-width: 560px;
+        width: 80%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 120px;
         display: flex;
-        justify-content: flex-end;
-        gap: 24px;
-        a {
-          cursor: pointer;
-          &:hover {
+        font-size: 16px;
+        gap: 24px 60px;
+      }
+    }
+    .footer__right {
+      .footer__title {
+        margin-bottom: 38px;
+        line-height: 48px;
+        font-weight: 700;
+        font-size: 24px;
+        text-align: end;
+      }
+      .footer__address {
+        text-align: end;
+        p {
+          font-size: 16px;
+        }
+        .socials {
+          margin-top: 30px;
+          display: flex;
+          justify-content: flex-end;
+          gap: 24px;
+          a {
+            cursor: pointer;
+            &:hover {
+              svg {
+                transform: scale(1.2);
+              }
+            }
             svg {
-              transform: scale(1.2);
+              transition: all 0.3s linear;
             }
           }
-          svg {
-            transition: all 0.3s linear;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  footer {
+    .footer-container {
+      .footer__right {
+        padding-left: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  footer {
+    .footer-container {
+      .footer__left {
+        flex-grow: 1;
+        .footer-navs {
+          height: 240px;
+        }
+      }
+      .footer__right {
+        flex-grow: 1;
+        justify-content: start;
+        .footer__address {
+          text-align: start;
+          .socials {
+            display: flex;
+            justify-content: start;
           }
         }
       }
     }
-  }
+  }  
 }
 
-@media (max-width: 1010px) {
-  footer {
-    .top {
-      flex-wrap: wrap;
-    }
-    .mid {
-      flex-wrap: wrap;
-      &__left {
-        margin: 0 auto 40px auto;
-        text-align: center;
-      }
-      &__right {
-        margin: 0 auto;
-        text-align: center;
-      }
-    }
-  }
-}
 
-@media (max-width: 740px) {
+@media (max-width: 530px) {
   footer {
-    .top {
-      flex-wrap: wrap;
-    }
-    .mid {
-      flex-wrap: wrap;
-      &__left {
-        margin: 0 auto 40px auto;
-        text-align: center;
-        height: 250px;
+    .footer-container {
+      .footer__left {
+        flex-grow: 1;
       }
-      &__right {
-        margin: 0 auto;
-        text-align: center;
-        .comunity{
-          justify-content: center;
+      .footer__right {
+        flex-grow: 1;
+        justify-content: start;
+        .footer__address {
+          text-align: start;
+          .socials {
+            display: flex;
+            justify-content: start;
+          }
         }
       }
     }
-  }
-}
-
-@media (max-width: 400px) {
-  footer {
-    .mid {
-      &__left {
-        height: 460px;
-      }
-      &__right {
-        margin: 0 auto;
-      }
-    }
-  }
+  }  
 }
