@@ -1,7 +1,6 @@
 import Link from "next/link";
 import "./footer.scss";
 
-
 const Footer = () => {
   const navs = [
     "Посуды",
@@ -22,11 +21,11 @@ const Footer = () => {
           <Link href="/" className="footer__title">
             In House
           </Link>
-          <div className="footer-navs">
+          <ul className="footer-navs">
             {navs.map((el, i) => (
-              <p key={i}>{el}</p>
+              <li key={i}>{el}</li>
             ))}
-          </div>
+          </ul>
         </div>
         <div className="footer__right">
           <h2 className="footer__title">+998 90 123-45-67</h2>

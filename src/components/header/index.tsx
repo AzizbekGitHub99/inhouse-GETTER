@@ -11,6 +11,7 @@ import phone from "@/assets/icons/phone.svg";
 import mark from "@/assets/icons/mark.svg";
 import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
+import paket from "@/assets/icons/paket.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,6 +57,32 @@ const Header = () => {
                 </div>
               </Link>
             </div>
+            <div
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={isMenuOpen ? "burger isOpen" : "burger"}
+            >
+              <span></span>
+              <span></span>
+            </div>
+            <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
+              <ul>
+                <li onClick={() => setIsMenuOpen(false)}>
+                  <NavLink href="/">Главная</NavLink>
+                </li>
+                <li onClick={() => setIsMenuOpen(false)}>
+                  <NavLink href="/about">О нас</NavLink>
+                </li>
+                <li onClick={() => setIsMenuOpen(false)}>
+                  <NavLink href="/catalog">Каталог продуктов</NavLink>
+                </li>
+                <li onClick={() => setIsMenuOpen(false)}>
+                  <NavLink href="/likes">Избранные</NavLink>
+                </li>
+                <li onClick={() => setIsMenuOpen(false)}>
+                  <NavLink href="/cart">Оформить заказ</NavLink>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -81,42 +108,14 @@ const Header = () => {
             </div>
             <div className="two-btn">
               <button className="like-btn">
-                <Image src={heart} width={13} height={12} alt="heart" />{" "}
-                Избранные
+                <Image src={heart} width={13} height={12} alt="heart" />
+                <span>Избранные</span>
               </button>
-              <button className="cart-btn">Оформить заказ</button>
+              <button className="cart-btn">
+                <Image src={paket} width={13} height={12} alt="heart" />
+                <span>Оформить заказ</span>
+              </button>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="under">
-        <div className="container under-container">
-          <Link href="/" className="logo">
-            <Image src={logo} fill priority alt="Logo" />
-          </Link>
-          <div onClick={ ()=> setIsMenuOpen(!isMenuOpen)} className="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
-            <ul>
-              <li onClick={() =>setIsMenuOpen(false)}>
-                <NavLink href="/">Главная</NavLink>
-              </li>
-              <li onClick={() =>setIsMenuOpen(false)}>
-                <NavLink href="/about">О нас</NavLink>
-              </li>
-              <li onClick={() =>setIsMenuOpen(false)}>
-                <NavLink href="/catalog">Каталог продуктов</NavLink>
-              </li>
-              <li onClick={() =>setIsMenuOpen(false)}>
-                <NavLink href="/likes">Избранные</NavLink>
-              </li>
-              <li onClick={() =>setIsMenuOpen(false)}>
-                <NavLink href="/cart">Оформить заказ</NavLink>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
