@@ -60,6 +60,11 @@ input {
     width: 96%;
   }
 }
+@media (max-width: 440px){
+  .container{
+    width: 360px;
+  }
+}
 @media (max-width: 1300px){
   .container .left{
     width: 210px;

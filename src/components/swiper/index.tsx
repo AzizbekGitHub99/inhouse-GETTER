@@ -33,7 +33,7 @@ const SwiperDis = () => {
             slidesPerView: 3,
             spaceBetween: 20
           },
-          500: {
+          600: {
             slidesPerView: 2,
             spaceBetween: 20
           },

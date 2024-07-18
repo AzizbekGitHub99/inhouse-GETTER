@@ -19,7 +19,7 @@ const CatalogPage = () => {
   return (
     <Fragment>
       <section className="main-section">
-        <div className="container flex">
+        <div className="container sides-container">
           <div className="aside left">
             <h3>Фильтр</h3>
             <ul>

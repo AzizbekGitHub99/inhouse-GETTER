@@ -4,21 +4,22 @@
   border-radius: 16px;
   transition: all 0.3s linear;
   min-width: 240px;
-  // margin: 0 auto;
   &__head {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
     height: 340px;
-    max-width: 320px;
-    min-width: 240px;
+    // max-width: 320px;
     width: 100%;
-    img{
-      transition: transform .3s linear;
-      object-fit: cover;
+    min-width: 170px;
+    background-color: #efefef;
+    img {
+      transition: transform 0.3s linear;
+      object-fit: contain;
+      object-position: center;
     }
   }
-  .dis{
+  .dis {
     &::after {
       content: "Скидка: 10%";
       top: 20px;
@@ -44,47 +45,69 @@
       span {
         font-weight: 700;
         font-size: 13px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
       }
     }
-    .to-cart{
+    .to-cart {
       height: 38px;
       width: 38px;
       border-radius: 12px;
       display: grid;
       place-items: center;
-      transition: .1s linear;
-      svg{
-        transition: all .2s linear;
-        &:last-child{
+      transition: 0.1s linear;
+      svg {
+        transition: all 0.2s linear;
+        &:last-child {
           display: none;
         }
       }
-      &:hover{
+      &:hover {
         background-color: var(--main-color-opacity);
-        svg{
-          &:first-child{
+        svg {
+          &:first-child {
             display: none;
           }
-          &:last-child{
+          &:last-child {
             display: inline-block;
           }
-          
         }
-
       }
     }
   }
   &:hover {
-    .product-card__head{
-      img{
+    .product-card__head {
+      img {
         transform: scale(1.1);
       }
     }
-    p{
-      span{
+    p {
+      span {
         color: var(--main-color);
       }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .product-card {
+    min-width: 170px;
+    &__head {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 300px;
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .product-card {
+    max-width: 170px;
+    &__head {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 220px;
     }
   }
 }
