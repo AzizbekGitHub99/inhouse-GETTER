@@ -4,6 +4,7 @@
   border-radius: 16px;
   transition: all 0.3s linear;
   min-width: 240px;
+  flex-grow: 1;
   &__head {
     position: relative;
     border-radius: 16px;
@@ -89,7 +90,7 @@
 
 @media (max-width: 1000px) {
   .product-card {
-    min-width: 170px;
+    min-width: 175px;
     &__head {
       position: relative;
       border-radius: 16px;
@@ -101,8 +102,8 @@
 }
 @media (max-width: 500px) {
   .product-card {
-    max-width: 170px;
-    &__head {
+    max-width: 175px;
+      &__head {
       position: relative;
       border-radius: 16px;
       overflow: hidden;

@@ -1,12 +1,9 @@
-import { FormEvent } from "react";
-import localFont from "next/font/local";
+'use client'
+import { MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import "./productCard.scss";
-
-const cardFont = localFont({ src: "../../assets/fonts/SFPRODISPLAYBOLD.ttf" });
-
 import img from "@/assets/images/home/product-card.jpg";
 
 interface CardProps {
@@ -15,9 +12,8 @@ interface CardProps {
 }
 
 const ProductCard: React.FC<CardProps> = ({ dis }) => {
-  const toCart = (e: FormEvent<HTMLFormElement>) => {
+  const toCart = (e: MouseEvent<HTMLSpanElement>) => {
     e.preventDefault();
-    const elements = e.currentTarget?.elements;
   };
   return (
     <Link href="products/1" className="product-card">
@@ -33,7 +29,7 @@ const ProductCard: React.FC<CardProps> = ({ dis }) => {
         <p>
           Название продукта <br /> <span>≈ 45 000.00 uzs</span>
         </p>
-        <span className="to-cart">
+        <span onClick={(e)=>toCart(e)} className="to-cart">
           <svg
             width="24"
             height="24"

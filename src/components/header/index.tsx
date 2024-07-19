@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import {  useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,6 +15,10 @@ import paket from "@/assets/icons/paket.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const main = document.querySelector('main')
+
+  main?.addEventListener('click', () => setIsMenuOpen(false))
   return (
     <header>
       <div className="top">
@@ -64,21 +68,21 @@ const Header = () => {
               <span></span>
               <span></span>
             </div>
-            <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
-              <ul>
-                <li onClick={() => setIsMenuOpen(false)}>
+            <div  className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
+              <ul onClick={() => setIsMenuOpen(false)}>
+                <li>
                   <NavLink href="/">Главная</NavLink>
                 </li>
-                <li onClick={() => setIsMenuOpen(false)}>
+                <li>
                   <NavLink href="/about">О нас</NavLink>
                 </li>
-                <li onClick={() => setIsMenuOpen(false)}>
+                <li>
                   <NavLink href="/catalog">Каталог продуктов</NavLink>
                 </li>
-                <li onClick={() => setIsMenuOpen(false)}>
+                <li>
                   <NavLink href="/likes">Избранные</NavLink>
                 </li>
-                <li onClick={() => setIsMenuOpen(false)}>
+                <li>
                   <NavLink href="/cart">Оформить заказ</NavLink>
                 </li>
               </ul>

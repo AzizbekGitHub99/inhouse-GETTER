@@ -182,6 +182,9 @@ header {
             display: flex;
             align-items: center;
             background-color: white;
+            img{
+              display: none;
+            }
           }
         }
       }
@@ -260,6 +263,9 @@ header {
               }
             }
             .cart-btn {
+              img{
+                display: block;
+              }
               span{
                 display: none;
               }
