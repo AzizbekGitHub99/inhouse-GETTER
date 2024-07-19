@@ -17,7 +17,6 @@ const SingleProductPage = () => {
         <div className="container product-container">
           <div className="product-container__img">
             <Zoom src={{prod:prod, alt: "Product"}}/>
-            {/* <Image src={prod} fill priority alt="prod" objectFit="contain" /> */}
           </div>
           <div className="product-container__body">
             <h2>Коллекционные состав для приготовлении</h2>

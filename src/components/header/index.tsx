@@ -26,10 +26,10 @@ const Header = () => {
           </div>
           <div className="top-right right">
             <div className="navs">
-              <Link href="/about">О нас</Link>
-              <Link href="/about">О доставке</Link>
-              <Link href="/about">Помощь</Link>
-              <Link href="/about">Контакты</Link>
+              <NavLink href="/about">О нас</NavLink>
+              <NavLink href="/">О доставке</NavLink>
+              <NavLink href="/">Помощь</NavLink>
+              <NavLink href="/">Контакты</NavLink>
             </div>
             <div className="address">
               <Link href="tel:+998908205575" className="box">

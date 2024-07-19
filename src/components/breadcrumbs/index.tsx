@@ -1,30 +1,36 @@
+'use client'
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 
 import "./breadcrumbs.scss";
 import { Fragment } from "react";
 
 const Breadcrumbs = () => {
+
   return (
     <Fragment>
       <div className="container">
         <div className="flex breadcrumb" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+          <ul className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li className="inline-flex items-center">
               <Link href="/" className="inline-flex items-center">
-                Главная <span> {"//"}</span>
+                Главная
               </Link>
             </li>
-            <li>
-              <Link href="/catalog" className="ms-1">
-                Для кухни <span> {"//"}</span>
+            <li>{'//'}</li>
+            <li className="inline-flex items-center">
+              <Link href="/catalog" className="inline-flex items-center">
+                Для кухни
               </Link>
             </li>
+            <li>{'//'}</li>
             <li aria-current="page">
               <div className="flex items-center">
-                <span className="ms-1"> Название продукта</span>
+                <span className="ms-1">Продукта</span>
               </div>
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
     </Fragment>

@@ -8,7 +8,7 @@ const AboutPage = () => {
     <Fragment>
       <Breadcrumbs />
       <section className="main-section">
-        <div className="container flex">
+        <div className="container about-container">
           <div className="aside left">
             <ul>
               <li>О нас</li>
