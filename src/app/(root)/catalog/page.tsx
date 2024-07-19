@@ -131,10 +131,13 @@ const CatalogPage = () => {
             <div className="controller">
               <div className="selection-box">
                 <span>Сортировать по:</span>
-                <select defaultValue="1" name="" id="">
-                  <option value="1">
-                    Возрастание цен
-                  </option>
+                <span>По:</span>
+                <select
+                  defaultValue="1"
+                  name=""
+                  id="select"
+                >
+                  <option value="1">Возрастание цен</option>
                   <option value="2">Уменьшение цен</option>
                   <option value="3">A-Z</option>
                   <option value="4">Z-A</option>
@@ -143,10 +146,11 @@ const CatalogPage = () => {
               <div className="card-types">
                 <button className="card-type">
                   <Image src={rect} width={16} height={16} alt="rect" />
-                  Карточки
+                  <span>Карточки</span>
                 </button>
                 <button className="card-type">
-                  <Image src={list} width={16} height={16} alt="rect" /> Лист
+                  <Image src={list} width={16} height={16} alt="rect" />
+                  <span>Лист</span>
                 </button>
               </div>
             </div>

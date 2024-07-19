@@ -2,7 +2,7 @@
 
 .main-section {
   margin: 25px 0 160px 0;
-  .sides-container{
+  .sides-container {
     display: flex;
     .aside {
       padding-right: 50px;
@@ -20,14 +20,13 @@
         margin-bottom: 60px;
         padding: 0;
         li {
-          font-family: 'Roboto';
+          font-family: "Roboto";
           list-style: none;
-          div{
+          div {
             display: flex;
             align-items: center;
-            input{
+            input {
               margin: 0 8px 0 0;
-
             }
           }
           font-weight: 400;
@@ -56,6 +55,7 @@
             font-size: 15px;
             opacity: 0.5;
             outline: none;
+            border: none;
             option {
               font-size: 15px;
               &:hover {
@@ -96,7 +96,7 @@
   }
 }
 .collection {
-  margin: 110px 0 120px 0;
+  margin-bottom: 110px;
   &__cards {
     display: flex;
     justify-content: space-between;
@@ -130,6 +130,7 @@
       button {
         display: flex;
         padding: 10px;
+        align-items: center;
         gap: 5px;
         background: #ee1c251a;
         border-radius: 8px;
@@ -138,4 +139,101 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .collection {
+    &__cards {
+      &__card {
+        .image-box {
+          height: 280px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .main-section {
+    .sides-container {
+      .mainside {
+        .controller {
+          .selection-box {
+            span {
+              &:first-child {
+                display: none;
+              }
+              &:last-child {
+                display: inline-block;
+              }
+            }
+          }
+          .card-types {
+            .card-type {
+              span {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .collection {
+    &__cards {
+      &__card {
+        .image-box {
+          height: 280px;
+        }
+      }
+    }
+  }
+}
 
+@media (max-width: 720px) {
+  .main-section {
+    .sides-container {
+      .aside {
+        display: none;
+      }
+      .mainside {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+  .collection {
+    &__cards {
+      &__card {
+        .image-box {
+          height: 230px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .collection {
+    &__cards {
+      flex-wrap: wrap;
+      gap: 30px;
+      &__card {
+        flex-grow: 1;
+        width: 100%;
+        .image-box {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .collection {
+    &__cards {
+      &__card {
+        .image-box {
+          height: 170px;
+        }
+      }
+    }
+  }
+}
