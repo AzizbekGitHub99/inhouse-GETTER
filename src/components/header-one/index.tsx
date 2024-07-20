@@ -16,11 +16,30 @@ import paket from "@/assets/icons/paket.svg";
 const HeaderOne = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const main = document.querySelector('main')
+  const main = document.querySelector("main");
 
-  main?.addEventListener('click', () => setIsMenuOpen(false))
+  main?.addEventListener("click", () => setIsMenuOpen(false));
   return (
     <header>
+      <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
+        <ul onClick={() => setIsMenuOpen(false)}>
+          <li>
+            <NavLink href="/">Главная</NavLink>
+          </li>
+          <li>
+            <NavLink href="/about">О нас</NavLink>
+          </li>
+          <li>
+            <NavLink href="/catalog">Каталог продуктов</NavLink>
+          </li>
+          <li>
+            <NavLink href="/likes">Избранные</NavLink>
+          </li>
+          <li>
+            <NavLink href="/cart">Оформить заказ</NavLink>
+          </li>
+        </ul>
+      </div>
       <div className="top">
         <div className="top-container container">
           <div className="top-left left">
@@ -67,25 +86,6 @@ const HeaderOne = () => {
             >
               <span></span>
               <span></span>
-            </div>
-            <div  className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
-              <ul onClick={() => setIsMenuOpen(false)}>
-                <li>
-                  <NavLink href="/">Главная</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/about">О нас</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/catalog">Каталог продуктов</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/likes">Избранные</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/cart">Оформить заказ</NavLink>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
