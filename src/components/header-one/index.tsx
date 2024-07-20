@@ -18,7 +18,7 @@ const HeaderOne = () => {
 
   const main = document.querySelector("main");
 
-  main?.addEventListener("click", () => setIsMenuOpen(false));
+  main?.addEventListener("mousedown", () => setIsMenuOpen(false));
   return (
     <header>
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>

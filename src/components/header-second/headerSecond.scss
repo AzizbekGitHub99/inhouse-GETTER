@@ -5,6 +5,36 @@ header {
   top: -90px;
   z-index: 15;
   background-color: white;
+  .burger-menu {
+    display: none;
+    position: absolute;
+    top: -100%;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s linear;
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        margin-bottom: 20px;
+        transition: all 0.3s linear;
+        &:hover {
+          color: var(--main-color);
+        }
+      }
+      .active {
+        color: var(--main-color);
+      }
+    }
+  }
+  .open {
+    z-index: 10;
+    top: 168px;
+    transition: all 0.3s linear;
+  }
   .top {
     position: relative;
     height: 90px;
@@ -268,6 +298,9 @@ header {
 @media (max-width: 670px) {
   header {
     top: 0;
+    .burger-menu{
+      display: block;
+    }
     .top {
       .top-container {
         .top-right {
@@ -295,9 +328,6 @@ header {
           }
           .burger {
             display: flex;
-          }
-          .burger-menu {
-            display: block;
           }
         }
       }

@@ -4,7 +4,7 @@
   margin: 0;
 }
 #body{  
-  overflow: hidden !important;
+  overflow-x: hidden !important;
 }
 
 button {
