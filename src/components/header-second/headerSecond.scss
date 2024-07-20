@@ -1,0 +1,332 @@
+@import "../../app/globals.css";
+
+header {
+  position: sticky;
+  top: -90px;
+  z-index: 15;
+  background-color: white;
+  .top {
+    position: relative;
+    height: 90px;
+    width: 100%;
+    z-index: 15;
+    .top-container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .top-left {
+        height: 100%;
+        .logo {
+          position: relative;
+          display: inline-block;
+          height: 80px;
+          width: 150px;
+        }
+      }
+      .top-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navs {
+          display: flex;
+          gap: 24px;
+          cursor: pointer;
+          a {
+            transition: 0.3s linear;
+            &:hover {
+              color: var(--main-color);
+            }
+          }
+          .active {
+            color: var(--main-color);
+          }
+        }
+        .address {
+          display: flex;
+          gap: 30px;
+          .box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            &__icon {
+              height: 40px;
+              width: 40px;
+              position: relative;
+            }
+            &__infos {
+              &__top {
+                font-size: 12px;
+                font-weight: 400;
+                opacity: 0.6;
+              }
+              &__bottom {
+                font-size: 15px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+
+        .two-btn {
+          display: none;
+          padding: 2px;
+          background-color: var(--main-color);
+          border-radius: 8px;
+          transition: all 0.3s linear;
+          &:hover {
+            background-color: rgba(238, 28, 37, 0.8);
+          }
+          button {
+            padding: 12px 22px;
+          }
+          .like-btn {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            background-color: var(--main-color);
+          }
+          .cart-btn {
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            img {
+              display: none;
+            }
+          }
+        }
+
+        .burger {
+          display: none;
+          height: 38px;
+          width: 38px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          span {
+            display: none;
+            background-color: black;
+            height: 2px;
+            width: 28px;
+            border-radius: 1px;
+            display: inline-block;
+            transition: all 0.3s linear;
+          }
+        }
+        .isOpen {
+          span {
+            &:first-child {
+              transform: translateY(6px) rotateZ(45deg);
+            }
+            &:last-child {
+              transform: translateY(-6px) rotateZ(-45deg);
+            }
+          }
+        }
+        .burger-menu {
+          display: none;
+          position: absolute;
+          top: 160px;
+          right: -700px;
+          background-color: white;
+          width: 100%;
+          text-align: center;
+          padding: 20px;
+          transition: all 0.3s linear;
+          ul {
+            padding: 0;
+            li {
+              list-style: none;
+              margin-bottom: 20px;
+              transition: all 0.3s linear;
+              &:hover {
+                color: var(--main-color);
+              }
+            }
+            .active {
+              color: var(--main-color);
+            }
+          }
+        }
+        .open {
+          z-index: 10;
+          right: 0;
+          transition: all 0.3s linear;
+        }
+      }
+    }
+  }
+  .bottom {
+    height: 80px;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    z-index: 10;
+    transition: 0.4s;
+    .bottom-container {
+      display: flex;
+      align-items: center;
+      height: 56px;
+      .bottom-left {
+        .active {
+          background-color: var(--main-color-opacity);
+          color: var(--main-color);
+        }
+      }
+      .bottom-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .bottom-nav {
+          display: flex;
+          gap: 5px;
+          .active {
+            background-color: var(--main-color-opacity);
+            color: var(--main-color);
+          }
+        }
+        .two-btn {
+          display: flex;
+          padding: 2px;
+          background-color: var(--main-color);
+          border-radius: 8px;
+          transition: all 0.3s linear;
+          &:hover {
+            background-color: rgba(238, 28, 37, 0.8);
+          }
+          button {
+            padding: 12px 22px;
+          }
+          .like-btn {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: white;
+            background-color: var(--main-color);
+          }
+          .cart-btn {
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            img {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-btns {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: #0000000d;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.4s;
+  width: fit-content;
+  &:hover {
+    background-color: var(--main-color-opacity);
+    color: var(--main-color);
+  }
+}
+
+@media (max-width: 1150px) {
+  header {
+    top: 0;
+    .top {
+      .top-container {
+        .top-right {
+          justify-content: end;
+          .address {
+            display: none;
+          }
+        }
+      }
+    }
+    .bottom {
+      .bottom-container {
+        .bottom-right {
+          justify-content: end;
+          .bottom-nav {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  header {
+    top: 0;
+    .top {
+      .top-container {
+        .top-right {
+          display: flex;
+          justify-content: end;
+          gap: 20px;
+          .navs {
+            display: none;
+          }
+          .two-btn {
+            display: flex;
+            .like-btn {
+              span {
+                display: none;
+              }
+            }
+            .cart-btn {
+              img {
+                display: block;
+              }
+              span {
+                display: none;
+              }
+            }
+          }
+          .burger {
+            display: flex;
+          }
+          .burger-menu {
+            display: block;
+          }
+        }
+      }
+    }
+    .bottom {
+      .bottom-container {
+        .bottom-left{
+          display: none;
+        }
+        .bottom-right {
+          padding: 0;
+          display: block;
+          width: 100%;
+          .bottom-nav {
+            display: flex;
+            gap: 2px;
+            justify-content: space-between; 
+            .nav-btns{
+              display: inline-block;
+              text-align: center;
+              flex-grow: 1;
+            }
+          }
+
+          .two-btn {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

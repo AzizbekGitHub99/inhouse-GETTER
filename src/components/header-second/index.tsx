@@ -1,10 +1,10 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import NavLink from "../navlink";
-import "./header.scss";
+import "./headerSecond.scss";
 
 import logo from "@/assets/images/logo/Logo.svg";
 import phone from "@/assets/icons/phone.svg";
@@ -13,7 +13,7 @@ import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
 import paket from "@/assets/icons/paket.svg";
 
-const Header = () => {
+const HeaderSecond = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const main = document.querySelector('main')
@@ -60,6 +60,16 @@ const Header = () => {
                   </div>
                 </div>
               </Link>
+            </div>
+            <div className="two-btn">
+              <button className="like-btn">
+                <Image src={heart} width={13} height={12} alt="heart" />
+                <span>Избранные</span>
+              </button>
+              <button className="cart-btn">
+                <Image src={paket} width={13} height={12} alt="heart" />
+                <span>Оформить заказ</span>
+              </button>
             </div>
             <div
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -127,4 +137,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderSecond;

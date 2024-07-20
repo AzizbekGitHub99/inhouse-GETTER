@@ -1,12 +1,12 @@
-
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
 import ChildrenType from "@/types/children";
 
 import "./globals.css";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Header from "@/utils/headers";
+
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -20,10 +20,11 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: ChildrenType) {
+
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
+        <Header/>
         <main>{children}</main>
         <Footer />
       </body>
