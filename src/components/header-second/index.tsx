@@ -16,9 +16,9 @@ import paket from "@/assets/icons/paket.svg";
 const HeaderSecond = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const main = document.querySelector('main')
+  // const main = document.querySelector('main')
 
-  main?.addEventListener('click', () => setIsMenuOpen(false))
+  // main?.addEventListener('click', () => setIsMenuOpen(false))
   return (
     <header>
            <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
