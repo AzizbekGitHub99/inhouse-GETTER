@@ -20,8 +20,8 @@ const HeaderSecond = () => {
 
   // main?.addEventListener('click', () => setIsMenuOpen(false))
   return (
-    <header>
-           <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
+    <header className="header2">
+      <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
         <ul onClick={() => setIsMenuOpen(false)}>
           <li>
             <NavLink href="/">Главная</NavLink>

@@ -1,6 +1,6 @@
 @import "../../app/globals.css";
 
-header {
+.header1 {
   position: sticky;
   top: -90px;
   z-index: 15;
@@ -32,7 +32,7 @@ header {
   }
   .open {
     z-index: 10;
-    top: 170px;
+    top: 168px;
     transition: all 0.3s linear;
   }
   .top {
@@ -126,36 +126,6 @@ header {
             }
           }
         }
-        // .burger-menu {
-        //   display: none;
-        //   position: absolute;
-        //   top: 160px;
-        //   right: -700px;
-        //   background-color: white;
-        //   width: 100%;
-        //   text-align: center;
-        //   padding: 20px;
-        //   transition: all 0.3s linear;
-        //   ul {
-        //     padding: 0;
-        //     li {
-        //       list-style: none;
-        //       margin-bottom: 20px;
-        //       transition: all 0.3s linear;
-        //       &:hover {
-        //         color: var(--main-color);
-        //       }
-        //     }
-        //     .active {
-        //       color: var(--main-color);
-        //     }
-        //   }
-        // }
-        // .open {
-        //   z-index: 10;
-        //   right: 0;
-        //   transition: all 0.3s linear;
-        // }
       }
     }
   }
@@ -242,7 +212,7 @@ header {
 }
 
 @media (max-width: 1150px) {
-  header {
+  .header1 {
     top: 0;
     .top {
       .top-container {
@@ -268,7 +238,7 @@ header {
 }
 
 @media (max-width: 670px) {
-  header {
+  .header1 {
     top: 0;
     .burger-menu {
       display: block;

@@ -16,13 +16,13 @@ import paket from "@/assets/icons/paket.svg";
 const HeaderOne = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  
+
 
   // const main = document.querySelector("main");
 
   // main?.addEventListener("mousedown", () => setIsMenuOpen(false));
   return (
-    <header>
+    <header className="header1">
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
         <ul onClick={() => setIsMenuOpen(false)}>
           <li>
