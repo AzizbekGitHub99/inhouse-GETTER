@@ -12,19 +12,18 @@ import mark from "@/assets/icons/mark.svg";
 import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
 import paket from "@/assets/icons/paket.svg";
+import { useDetectClickOutside } from "react-detect-click-outside";
 
 const HeaderOne = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const ref = useDetectClickOutside({ onTriggered: () => setIsMenuOpen(false) });
 
+  const main = document.addEventListener
 
-
-  // const main = document.querySelector("main");
-
-  // main?.addEventListener("mousedown", () => setIsMenuOpen(false));
   return (
     <header className="header1">
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
-        <ul onClick={() => setIsMenuOpen(false)}>
+        <ul ref={ref} onClick={() => setIsMenuOpen(false)}>
           <li>
             <NavLink href="/">Главная</NavLink>
           </li>

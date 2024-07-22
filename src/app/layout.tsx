@@ -7,7 +7,6 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/utils/headers";
 
-
 const roboto = Roboto({
   weight: ['400', '700'],
   style: 'normal',
