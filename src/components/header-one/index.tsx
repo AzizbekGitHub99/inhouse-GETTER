@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useDetectClickOutside } from "react-detect-click-outside";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,13 +13,10 @@ import mark from "@/assets/icons/mark.svg";
 import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
 import paket from "@/assets/icons/paket.svg";
-import { useDetectClickOutside } from "react-detect-click-outside";
 
 const HeaderOne = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ref = useDetectClickOutside({ onTriggered: () => setIsMenuOpen(false) });
-
-  const main = document.addEventListener
 
   return (
     <header className="header1">

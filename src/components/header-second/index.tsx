@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useDetectClickOutside } from "react-detect-click-outside";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,11 +16,13 @@ import paket from "@/assets/icons/paket.svg";
 
 const HeaderSecond = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const ref = useDetectClickOutside({ onTriggered: () => setIsMenuOpen(false) });
+
 
   return (
     <header className="header2">
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
-        <ul onClick={() => setIsMenuOpen(false)}>
+        <ul ref={ref} onClick={() => setIsMenuOpen(false)}>
           <li>
             <NavLink href="/">Главная</NavLink>
           </li>
