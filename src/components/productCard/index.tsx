@@ -3,21 +3,33 @@ import { MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ProductType from "@/types/product";
+
 import "./productCard.scss";
 import img from "@/assets/images/home/product-card.jpg";
 
 interface CardProps {
+  data: ProductType | any;
   key: number;
-  dis?: any;
+  // dis?: any;
 }
 
-const ProductCard: React.FC<CardProps> = ({ dis }) => {
+
+const ProductCard: React.FC<CardProps> = ({ data, key }) => {
+  console.log(data);
+  
+  const cartProducts = JSON.parse(localStorage.getItem("cartProducts") as string || "[]");
   const toCart = (e: MouseEvent<HTMLSpanElement>) => {
     e.preventDefault();
+    // if (true) {
+    //   let newCart = cartProducts.push()
+      
+    //   localStorage.setItem("cartProducts",JSON.stringify([]))
+    // }
   };
   return (
     <Link href="products/1" className="product-card">
-      <div className={dis ? "product-card__head dis" : "product-card__head"}>
+      <div className={data ? "product-card__head dis" : "product-card__head"}>
         <Image
           src={img}
           alt="Picture of the author"
@@ -27,7 +39,7 @@ const ProductCard: React.FC<CardProps> = ({ dis }) => {
       </div>
       <div className="product-card__body">
         <p>
-          Название продукта <br /> <span>≈ 45 000.00 uzs</span>
+          {data?.title.split(" ")[0] + " " + data?.title.split(" ")[1]} <br /> <span>{data?.price} usd</span>
         </p>
         <span onClick={(e)=>toCart(e)} className="to-cart">
           <svg

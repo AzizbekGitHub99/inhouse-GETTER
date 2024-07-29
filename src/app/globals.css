@@ -44,6 +44,7 @@ input {
 
 .container {
   margin: 0 auto;
+  padding: 0 15px;
   width: 1360px;
   overflow: hidden;
 }
@@ -61,6 +62,11 @@ input {
 @media (max-width: 500px){
   .container{
     width: 360px;
+  }
+}
+@media (max-width: 360px){
+  .container{
+    width: 340px;
   }
 }
 @media (max-width: 1300px){

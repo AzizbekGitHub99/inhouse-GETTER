@@ -121,7 +121,7 @@
             &:first-child {
               transform: translateY(6px) rotateZ(45deg);
             }
-            &:last-child{
+            &:last-child {
               transform: translateY(-6px) rotateZ(-45deg);
             }
           }
@@ -186,7 +186,7 @@
             display: flex;
             align-items: center;
             background-color: white;
-            img{
+            img {
               display: none;
             }
           }
@@ -262,17 +262,33 @@
         .bottom-right {
           .two-btn {
             .like-btn {
-              span{
+              span {
                 display: none;
               }
             }
             .cart-btn {
-              img{
+              img {
                 display: block;
               }
-              span{
+              span {
                 display: none;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .header1 {
+    .bottom {
+      .bottom-container {
+        .bottom-left {
+          .nav-btns {
+            img {
+              display: none;
             }
           }
         }

@@ -323,9 +323,25 @@
               flex-grow: 1;
             }
           }
-
           .two-btn {
             display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 360px) {
+  .header1 {
+    .bottom {
+      .bottom-container {
+        .bottom-left {
+          .nav-btns {
+            img {
+              display: none;
+            }
           }
         }
       }

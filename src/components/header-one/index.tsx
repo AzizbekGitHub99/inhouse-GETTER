@@ -16,7 +16,10 @@ import paket from "@/assets/icons/paket.svg";
 
 const HeaderOne = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const ref = useDetectClickOutside({ onTriggered: () => setIsMenuOpen(false) });
+  const ref = useDetectClickOutside({
+    onTriggered: () => setIsMenuOpen(false),
+  });
+  console.log(ref);
 
   return (
     <header className="header1">
@@ -80,6 +83,7 @@ const HeaderOne = () => {
               </Link>
             </div>
             <div
+              ref={ref}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={isMenuOpen ? "burger isOpen" : "burger"}
             >

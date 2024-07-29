@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 
 import ProductCard from "@/components/productCard";
@@ -11,11 +11,27 @@ import "./home.scss";
 
 import img from "@/assets/images/home/hero-card.jpg";
 import adv from "@/assets/images/home/advertising.png";
+import request from "@/request";
+import ProductType from "@/types/product";
 
 export default function Home() {
-  const arr = Array.from({ length: 10 }).map((el) => {
-    el;
-  });
+  const [data, setData] = useState<ProductType[]>();
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        // setLoading(true);
+        const { data } = await request("products");
+        localStorage.setItem("products", data);
+        console.log(data);
+        
+        setData(data as ProductType[]);
+      } finally {
+        // setLoading(false);
+      }
+    };
+    getData();
+  }, []);
 
   return (
     <Fragment>
@@ -25,12 +41,7 @@ export default function Home() {
           <div className="hero__cards">
             <div className="hero__cards__card">
               <div className="image-box">
-                <Image
-                  src={img}
-                  alt="Picture of the author"
-                  fill
-                  priority
-                />
+                <Image src={img} alt="Picture of the author" fill priority />
               </div>
               <p>Time is the capital of your life, so spend it wisely.</p>
               <svg
@@ -49,12 +60,7 @@ export default function Home() {
             </div>
             <div className="hero__cards__card">
               <div className="image-box">
-                <Image
-                  src={img}
-                  alt="Picture of the author"
-                  fill
-                  priority
-                />
+                <Image src={img} alt="Picture of the author" fill priority />
               </div>
               <p>Time is the capital of your life, so spend it wisely.</p>
               <svg
@@ -82,8 +88,8 @@ export default function Home() {
             кухни
           </p>
           <div className="last-products__wrapper">
-            {arr.map((el, i) => (
-              <ProductCard key={i} />
+            {data?.map((el: ProductType) => (
+              <ProductCard data={el} key={el.id} />
             ))}
           </div>
           <button className="last-products__wrapper__all-btn">
@@ -126,12 +132,7 @@ export default function Home() {
           <div className="collection__cards">
             <div className="collection__cards__card">
               <div className="image-box">
-                <Image
-                  src={img}
-                  alt="Picture of the author"
-                  fill
-                  priority
-                />
+                <Image src={img} alt="Picture of the author" fill priority />
               </div>
               <p>
                 Название продукта <br /> <span>≈ 45 000.00 uzs</span>
@@ -154,12 +155,7 @@ export default function Home() {
             </div>
             <div className="collection__cards__card">
               <div className="image-box">
-                <Image
-                  src={img}
-                  alt="Picture of the author"
-                  fill
-                  priority
-                />
+                <Image src={img} alt="Picture of the author" fill priority />
               </div>
               <p>
                 Название продукта <br /> <span>≈ 45 000.00 uzs</span>
