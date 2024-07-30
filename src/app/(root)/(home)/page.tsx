@@ -13,19 +13,20 @@ import img from "@/assets/images/home/hero-card.jpg";
 import adv from "@/assets/images/home/advertising.png";
 import request from "@/request";
 import ProductType from "@/types/product";
+import { useStore } from "@/zustand";
 
 export default function Home() {
-  const [data, setData] = useState<ProductType[]>();
+  
+  const products = useStore(state => state.products)
+  const setProducts = useStore(state => state.setProducts)
 
   useEffect(() => {
     const getData = async () => {
       try {
         // setLoading(true);
         const { data } = await request("products");
-        localStorage.setItem("products", data);
-        console.log(data);
-        
-        setData(data as ProductType[]);
+        console.log(data);        
+        setProducts(data);
       } finally {
         // setLoading(false);
       }
@@ -88,7 +89,7 @@ export default function Home() {
             кухни
           </p>
           <div className="last-products__wrapper">
-            {data?.map((el: ProductType) => (
+            {products?.map((el: ProductType) => (
               <ProductCard data={el} key={el.id} />
             ))}
           </div>

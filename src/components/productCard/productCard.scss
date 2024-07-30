@@ -57,19 +57,17 @@
       transition: 0.1s linear;
       svg {
         transition: all 0.2s linear;
-        &:last-child {
-          display: none;
-        }
+      }
+      .two{
+        display: none;
       }
       &:hover {
         background-color: var(--main-color-opacity);
-        svg {
-          &:first-child {
-            display: none;
-          }
-          &:last-child {
-            display: inline-block;
-          }
+        .one{
+          display: none;
+        }
+        .two{
+          display: inline-block;
         }
       }
     }
