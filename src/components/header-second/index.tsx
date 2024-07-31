@@ -4,6 +4,8 @@ import { useDetectClickOutside } from "react-detect-click-outside";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useCartStore } from "@/zustand";
+
 import NavLink from "../navlink";
 import "./headerSecond.scss";
 
@@ -15,10 +17,9 @@ import heart from "@/assets/icons/heart.svg";
 import paket from "@/assets/icons/paket.svg";
 
 const HeaderSecond = () => {
+  const cartProducts = useCartStore(state=> state.cartProducts)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ref = useDetectClickOutside({ onTriggered: () => setIsMenuOpen(false) });
-
-
   return (
     <header className="header2">
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
@@ -86,6 +87,7 @@ const HeaderSecond = () => {
                 <span>Избранные</span>
               </button>
               <button className="cart-btn">
+              <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts.length}</span>
                 <Image src={paket} width={13} height={12} alt="heart" />
                 <span>Оформить заказ</span>
               </button>
@@ -145,6 +147,7 @@ const HeaderSecond = () => {
                 <span>Избранные</span>
               </button>
               <button className="cart-btn">
+              <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts.length}</span>
                 <Image src={paket} width={13} height={12} alt="heart" />
                 <span>Оформить заказ</span>
               </button>

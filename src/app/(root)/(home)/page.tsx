@@ -25,7 +25,6 @@ export default function Home() {
       try {
         // setLoading(true);
         const { data } = await request("products");
-        console.log(data);        
         setProducts(data);
       } finally {
         // setLoading(false);
@@ -89,8 +88,8 @@ export default function Home() {
             кухни
           </p>
           <div className="last-products__wrapper">
-            {products?.map((el: ProductType) => (
-              <ProductCard data={el} key={el.id} />
+            {products?.slice(1,11).map((el: ProductType) => (
+              <ProductCard data={el} key={el.id} dis={false} />
             ))}
           </div>
           <button className="last-products__wrapper__all-btn">

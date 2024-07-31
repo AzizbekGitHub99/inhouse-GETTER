@@ -1,15 +1,24 @@
+'use client'
+
 import { Fragment } from "react";
-import Image from "next/image";
+import { useParams } from "next/navigation";
 
 import Breadcrumbs from "@/components/breadcrumbs";
+import SwiperDis from "@/components/swiper";
+import Zoom from '@/components/imageZoom/ImageInnerZoom'
+import { useStore } from "@/zustand";
 
 import prod from "@/assets/images/home/product-card.jpg";
 
 import "./singleProduct.scss";
-import SwiperDis from "@/components/swiper";
-import Zoom from '@/components/imageZoom/ImageInnerZoom'
 
 const SingleProductPage = () => {
+  const products = useStore(state => state.products)
+  const {singleProduct: currentId} = useParams()
+  const currentProduct = products?.find(el=>{el.id === +currentId})
+
+console.log(products);
+
   return (
     <Fragment>
       <Breadcrumbs />
@@ -20,7 +29,7 @@ const SingleProductPage = () => {
           </div>
           <div className="product-container__body">
             <h2>Коллекционные состав для приготовлении</h2>
-            <h3>45 000.00 uzs</h3>
+            <h3> uzs</h3>
             <div className="product-container__body__materials">
               <h4>Материалы</h4>
               <div className="box">

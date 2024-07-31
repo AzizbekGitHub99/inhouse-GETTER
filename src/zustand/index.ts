@@ -18,7 +18,8 @@ export const useStore = create<StoreType>((set)=>({
 }))
 
 export const useCartStore = create<CartStoreType>((set)=>({
-    cartProducts: JSON.parse((localStorage.getItem("cartProducts") as string )) || [],
+    
+    cartProducts: JSON.parse((localStorage?.getItem("cartProducts") as string )) || [],
     setCartProducts: (data)=>{
         set(() =>({cartProducts: data}))
     },

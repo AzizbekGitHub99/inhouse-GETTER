@@ -9,11 +9,15 @@ import "swiper/css/navigation";
 import ProductCard from "../productCard";
 
 import "./swiper.scss";
+import { useStore } from "@/zustand";
 
 const SwiperDis = () => {
-  const slides = Array.from({ length: 10 }).map(
-    (el, index) => `Slide ${index + 1}`
+  const {products} = useStore()
+  const slides = products.slice(1,10).map(
+    (el) => el
   );
+  console.log(slides);
+  
   return (
     <Fragment>
       <Swiper
@@ -50,7 +54,7 @@ const SwiperDis = () => {
       >
         {slides.map((el, i) => (
           <SwiperSlide key={i}>
-            <ProductCard key={i} dis={true} />
+            <ProductCard data={el} key={i} dis={true} />
           </SwiperSlide>
         ))}
       </Swiper>

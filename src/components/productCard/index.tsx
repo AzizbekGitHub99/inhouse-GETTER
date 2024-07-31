@@ -12,13 +12,12 @@ import { useCartStore, useStore } from "@/zustand";
 interface CardProps {
   data: ProductType | any;
   key: number;
-  dis?: any;
+  dis?: boolean;
 }
 
-const ProductCard: React.FC<CardProps> = ({ data }) => {
+const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
   const { products } = useStore();
   const { cartProducts, setCartProducts } = useCartStore();
-  // const cartProducts = useCartStore((state) => state.cartProducts)
 
   useEffect(() => {
   }, [cartProducts]);
@@ -49,12 +48,12 @@ const ProductCard: React.FC<CardProps> = ({ data }) => {
   };
   return (
     <Link href={`products/${data?.id}`} className="product-card">
-      <div className={data ? "product-card__head dis" : "product-card__head"}>
+      <div className={dis ? "product-card__head dis" : "product-card__head"}>
         <Image src={img} alt="Picture of the author" fill priority />
       </div>
       <div className="product-card__body">
         <p>
-          {data?.title.split(" ")[0] + " " + data?.title.split(" ")[1]} <br />
+          {data?.title?.split(" ")[0] + " " + data?.title?.split(" ")[1]} <br />
           <span>{data?.price} usd</span>
         </p>
         <span onClick={(e) => toCart(e, data?.id)} className="to-cart">

@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { useDetectClickOutside } from "react-detect-click-outside";
 import Image from "next/image";
 import Link from "next/link";
+import { useDetectClickOutside } from "react-detect-click-outside";
 
 import NavLink from "../navlink";
 import "./headerOne.scss";
@@ -13,14 +13,14 @@ import mark from "@/assets/icons/mark.svg";
 import circles from "@/assets/icons/circles.svg";
 import heart from "@/assets/icons/heart.svg";
 import paket from "@/assets/icons/paket.svg";
+import { useCartStore } from "@/zustand";
 
 const HeaderOne = () => {
+  const {cartProducts} = useCartStore()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ref = useDetectClickOutside({
     onTriggered: () => setIsMenuOpen(false),
   });
-  console.log(ref);
-
   return (
     <header className="header1">
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
@@ -119,6 +119,7 @@ const HeaderOne = () => {
                 <span>Избранные</span>
               </button>
               <button className="cart-btn">
+                <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts.length}</span>
                 <Image src={paket} width={13} height={12} alt="heart" />
                 <span>Оформить заказ</span>
               </button>
