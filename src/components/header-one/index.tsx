@@ -119,7 +119,7 @@ const HeaderOne = () => {
                 <span>Избранные</span>
               </button>
               <button className="cart-btn">
-                <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts.length}</span>
+                <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts?.length}</span>
                 <Image src={paket} width={13} height={12} alt="heart" />
                 <span>Оформить заказ</span>
               </button>

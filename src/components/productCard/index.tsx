@@ -1,8 +1,7 @@
 "use client";
-import { MouseEvent, useEffect } from "react";
+import { MouseEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Cookies from "js-cookie"
 
 
 import ProductType from "@/types/product";
@@ -10,6 +9,7 @@ import ProductType from "@/types/product";
 import img from "@/assets/images/home/product-card.jpg";
 import "./productCard.scss";
 import { useCartStore, useStore } from "@/zustand";
+import CartProductType from "@/types/cartProducts";
 
 interface CardProps {
   data: ProductType | any;
@@ -21,8 +21,8 @@ const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
   const { products } = useStore();
   const { cartProducts, setCartProducts } = useCartStore();
 
-  useEffect(() => {}, [cartProducts]);
   const productInCart = cartProducts?.find((el) => el?.id === data?.id);
+
   const toCart = (e: MouseEvent<HTMLSpanElement>, _id: number) => {
     e.preventDefault();
     let clickEl: ProductType | any = products.find((el: ProductType) => {
@@ -34,15 +34,15 @@ const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
         return el.id === clickEl.id;
       })
     ) {
-      let newCart = cartProducts.filter((el: ProductType) => {
-        console.log(el);
+      let newCart = cartProducts.filter((el: CartProductType) => {
+        if (el.id === clickEl.id) {
+          el.quantity = 0;
+        }
         return el.id !== clickEl.id;
       });
-      Cookies.set("cartProducts", JSON.stringify(newCart));
       setCartProducts(newCart);
     } else {
-      let newCart = [...cartProducts, clickEl];
-      Cookies.set("cartProducts", JSON.stringify(newCart));
+      let newCart = [...cartProducts, {...clickEl, quantity: 1}];
       setCartProducts(newCart);
     }
   };
@@ -67,7 +67,6 @@ const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
                 id="check"
                 data-name="Line Color"
                 xmlns="http://www.w3.org/2000/svg"
-                // className="icon line-color"
               >
                 <polyline
                   id="primary"
