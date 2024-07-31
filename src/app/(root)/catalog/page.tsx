@@ -11,11 +11,10 @@ import "./catalog.scss";
 import ProductCard from "@/components/productCard";
 import SwiperDis from "@/components/swiper";
 import Email from "@/components/email";
+import { useStore } from "@/zustand";
 
 const CatalogPage = () => {
-  const arr = Array.from({ length: 12 }).map((el) => {
-    el;
-  });
+  const {products} = useStore()
   return (
     <Fragment>
       <section className="main-section">
@@ -155,8 +154,8 @@ const CatalogPage = () => {
               </div>
             </div>
             <div className="wrapper">
-              {arr.map((el, i) => (
-                <ProductCard key={i} />
+              {products?.slice(1,13).map((el, i) => (
+                <ProductCard data={el} key={i} />
               ))}
               <button className="wrapper__all-btn">Посмотреть все</button>
             </div>
