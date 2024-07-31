@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { useParams } from "next/navigation";
 
 import Breadcrumbs from "@/components/breadcrumbs";
@@ -13,11 +13,15 @@ import prod from "@/assets/images/home/product-card.jpg";
 import "./singleProduct.scss";
 
 const SingleProductPage = () => {
-  const products = useStore(state => state.products)
+  const {products, execute} = useStore()
   const {singleProduct: currentId} = useParams()
-  const currentProduct = products?.find(el=>{el.id === +currentId})
+  useEffect(()=>{
+    execute()
+  },[])
+  const currentProduct = products?.find(el=>{return el.id === +currentId})
 
-console.log(products);
+  console.log(currentProduct);
+  
 
   return (
     <Fragment>
@@ -28,8 +32,8 @@ console.log(products);
             <Zoom src={{prod:prod, alt: "Product"}}/>
           </div>
           <div className="product-container__body">
-            <h2>Коллекционные состав для приготовлении</h2>
-            <h3> uzs</h3>
+            <h2>{currentProduct?.title?.split(" ")[0] + " " + currentProduct?.title?.split(" ")[1]}</h2>
+            <h3>{`${currentProduct?.price} usd`}</h3>
             <div className="product-container__body__materials">
               <h4>Материалы</h4>
               <div className="box">
@@ -40,9 +44,7 @@ console.log(products);
             <div className="product-container__body__description">
               <h4>Описание</h4>
               <p>
-                За прошедшие годы текст Lorem Ipsum получил много версий.
-                Некоторые версии появились по ошибке, некоторые - намеренно
-                (например, юмористические варианты).
+                {currentProduct?.description}
               </p>
             </div>
             <button className="product-container__body__btn">

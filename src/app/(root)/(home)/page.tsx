@@ -17,20 +17,10 @@ import { useStore } from "@/zustand";
 
 export default function Home() {
   
-  const products = useStore(state => state.products)
-  const setProducts = useStore(state => state.setProducts)
+  const {products, execute} = useStore()
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        // setLoading(true);
-        const { data } = await request("products");
-        setProducts(data);
-      } finally {
-        // setLoading(false);
-      }
-    };
-    getData();
+    execute()
   }, []);
 
   return (

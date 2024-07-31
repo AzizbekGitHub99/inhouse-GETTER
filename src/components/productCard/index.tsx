@@ -37,12 +37,11 @@ const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
         console.log(el);
         return el.id !== clickEl.id
        });
-      // console.log(newCart);
-      localStorage.setItem("cartProducts", JSON.stringify(newCart));
+      window?.localStorage.setItem("cartProducts", JSON.stringify(newCart));
       setCartProducts(newCart)
     } else {
       let newCart = [...cartProducts, clickEl];
-      localStorage.setItem("cartProducts", JSON.stringify(newCart));
+      window?.localStorage.setItem("cartProducts", JSON.stringify(newCart));
       setCartProducts(newCart);
     }
   };

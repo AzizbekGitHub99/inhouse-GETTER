@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Image from "next/image";
 
 import rect from "@/assets/icons/rectangle.svg";
@@ -14,7 +14,10 @@ import Email from "@/components/email";
 import { useStore } from "@/zustand";
 
 const CatalogPage = () => {
-  const {products} = useStore()
+  const {products, execute} = useStore()
+  useEffect(()=> {
+    execute()
+  },[])
   return (
     <Fragment>
       <section className="main-section">
