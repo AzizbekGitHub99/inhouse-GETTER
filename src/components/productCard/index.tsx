@@ -2,6 +2,8 @@
 import { MouseEvent, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Cookies from "js-cookie"
+
 
 import ProductType from "@/types/product";
 
@@ -19,8 +21,7 @@ const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
   const { products } = useStore();
   const { cartProducts, setCartProducts } = useCartStore();
 
-  useEffect(() => {
-  }, [cartProducts]);
+  useEffect(() => {}, [cartProducts]);
   const productInCart = cartProducts?.find((el) => el?.id === data?.id);
   const toCart = (e: MouseEvent<HTMLSpanElement>, _id: number) => {
     e.preventDefault();
@@ -29,19 +30,19 @@ const ProductCard: React.FC<CardProps> = ({ data, dis }) => {
     });
 
     if (
-      cartProducts.find((el: ProductType) => {        
+      cartProducts.find((el: ProductType) => {
         return el.id === clickEl.id;
       })
     ) {
-      let newCart = cartProducts.filter((el: ProductType) => { 
+      let newCart = cartProducts.filter((el: ProductType) => {
         console.log(el);
-        return el.id !== clickEl.id
-       });
-      window?.localStorage.setItem("cartProducts", JSON.stringify(newCart));
-      setCartProducts(newCart)
+        return el.id !== clickEl.id;
+      });
+      Cookies.set("cartProducts", JSON.stringify(newCart));
+      setCartProducts(newCart);
     } else {
       let newCart = [...cartProducts, clickEl];
-      window?.localStorage.setItem("cartProducts", JSON.stringify(newCart));
+      Cookies.set("cartProducts", JSON.stringify(newCart));
       setCartProducts(newCart);
     }
   };

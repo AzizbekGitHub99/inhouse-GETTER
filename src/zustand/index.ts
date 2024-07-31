@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import request from "@/request";
 import ProductType from "@/types/product";
 import { create } from "zustand";
@@ -27,9 +28,21 @@ export const useStore = create<StoreType>((set)=>({
       },
 }))
 
-export const useCartStore = create<CartStoreType>((set)=>({
-    cartProducts: JSON.parse((window?.localStorage?.getItem("cartProducts") as string )) || [],
-    setCartProducts: (data)=>{
-        set(() =>({cartProducts: data}))
-    },
-}))
+export const useCartStore = create<CartStoreType>((set) => {
+    const cartProductsStr = Cookies?.get("cartProducts");
+    const cartProducts = cartProductsStr ? JSON.parse(cartProductsStr) : [];
+  
+    return {
+      cartProducts,
+      setCartProducts: (data) => {
+        set(() => ({ cartProducts: data }));
+      },
+    };
+  });
+
+// export const useCartStore = create<CartStoreType>((set)=>({
+//     cartProducts: JSON.parse((Cookies?.get("cartProducts") as string )) || [],
+//     setCartProducts: (data)=>{
+//         set(() =>({cartProducts: data}))
+//     },
+// }))
