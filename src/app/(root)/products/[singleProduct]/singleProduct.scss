@@ -78,15 +78,24 @@
             background-color: #f15057;
           }
         }
-        &__btn-group{
+        &__btn-group {
+          height: 60px;
           display: flex;
           align-items: center;
-          span{
+          gap: 10px;
+          span {
             text-align: center;
-            width: 50px;
+            width: 60px;
+            display: inline-block;
+            line-height: 60px;
+            height: 100%;
             font-size: 21px;
+            background-color: rgb(240, 232, 232);
+            border-radius: 12px;
           }
-          button{
+          button {
+            height: 100%;
+            width: 60px;
             font-size: 21px;
           }
         }
