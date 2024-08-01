@@ -90,9 +90,6 @@
   .product-card {
     min-width: 175px;
     &__head {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
       height: 300px;
       width: 100%;
     }
@@ -102,10 +99,17 @@
   .product-card {
     max-width: 175px;
       &__head {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
       height: 220px;
+    }
+  }
+}
+@media (max-width: 360px) {
+  .product-card {
+    max-width: 150px;
+    min-width: 145px;
+      &__head {
+      min-width: 145px;
+      overflow: hidden;
     }
   }
 }
