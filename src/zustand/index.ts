@@ -24,7 +24,7 @@ export const useStore = create<StoreType>((set) => ({
   },
   execute: async () => {
     try {
-      const res = await request.get("products");
+      const res = await request("products");
       set({ products: res.data });
     } catch (err) {
       console.error("Error in data fetch:", err);

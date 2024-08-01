@@ -10,8 +10,8 @@ const Email = () => {
         Оставте ваше контакты мы вам <br /> перезвоним!
       </p>
       <form className="email__form">
-        <Input pl={"Ваше имя"}/>
-        <Input pl={"Номер телефона"}/>
+        <Input type={"text"} pl={"Ваше имя"}/>
+        <Input type={"number"} pl={"Номер телефона"}/>
         <button type="submit">Отправить</button>
       </form>
     </div>

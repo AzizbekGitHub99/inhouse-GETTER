@@ -13,10 +13,9 @@ import { useStore } from "@/zustand";
 
 const SwiperDis = () => {
   const {products} = useStore()
-  const slides = products.slice(1,10).map(
+  const slides = products.slice(1,11).map(
     (el) => el
   );
-  console.log(slides);
   
   return (
     <Fragment>

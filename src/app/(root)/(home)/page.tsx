@@ -11,7 +11,6 @@ import "./home.scss";
 
 import img from "@/assets/images/home/hero-card.jpg";
 import adv from "@/assets/images/home/advertising.png";
-import request from "@/request";
 import ProductType from "@/types/product";
 import { useStore } from "@/zustand";
 
@@ -21,8 +20,8 @@ export default function Home() {
 
   useEffect(() => {
     execute()
+    
   }, []);
-
   return (
     <Fragment>
       <section className="hero">

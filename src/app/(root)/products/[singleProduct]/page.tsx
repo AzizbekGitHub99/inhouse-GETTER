@@ -23,7 +23,6 @@ const SingleProductPage = () => {
   const [currentProduct, setCurrentProduct] =useState<CurrenProductType | null>();
 
   useEffect(() => {
-    console.log(currentProduct);
     execute();
   }, []);
 
@@ -31,21 +30,20 @@ const SingleProductPage = () => {
     if (cartProducts?.find((el) => el.id === +currentId)) {
       let res = cartProducts?.find((el) => el.id === +currentId);     
       setCurrentProduct(res);
-    } else {
+    } else {      
       let res = products?.find((el) => el.id === +currentId);
-      console.log(products);
-      
       setCurrentProduct(res);
-    }
-  }, [cartProducts]);
+    }   
+  }, [cartProducts, products]);
 
   const toCart = (e: MouseEvent<HTMLSpanElement>, _id: number) => {
     e.preventDefault();
+
     let clickEl: ProductType | any = products.find((el: ProductType) => {
       return el.id === _id;
     });
-    if (
-      cartProducts.find((el: ProductType) => {
+
+    if (cartProducts.find((el: ProductType) => {
         return el.id === clickEl.id;
       })
     ) {
@@ -61,13 +59,16 @@ const SingleProductPage = () => {
       setCartProducts(newCart);
     }
   };
+
   const controlQuantity = (e: MouseEvent<HTMLSpanElement>, _id: number) => {
     e.preventDefault();
+
     let clickEl: CartProductType | any = cartProducts.find(
       (el: CartProductType) => {
         return el.id === _id;
       }
     );
+
     if (e.currentTarget.textContent === "+") {
       let newCart = cartProducts.map((el: CartProductType) => {
         if (el.id === _id) {
@@ -93,8 +94,6 @@ const SingleProductPage = () => {
       }
     }
   };
-
-  console.log(currentProduct);
 
   return (
     <Fragment>
