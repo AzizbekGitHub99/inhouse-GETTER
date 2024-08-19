@@ -80,7 +80,6 @@ const SingleProductPage = () => {
     } else if (e.currentTarget.textContent === "-") {
       if (clickEl.quantity === 1) {
         let newCart = cartProducts.filter((el: CartProductType) => el.id !== clickEl.id);
-        // setCurrentProduct(products?.find(el => el.id === +currentId))
         setCartProducts(newCart);
       } else {
         let newCart = cartProducts.map((el: CartProductType) => {
