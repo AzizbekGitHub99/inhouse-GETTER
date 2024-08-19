@@ -95,15 +95,15 @@
     }
   }
 }
+// @media (max-width: 500px) {
+//   .product-card {
+//     max-width: 175px;
+//       &__head {
+//       height: 220px;
+//     }
+//   }
+// }
 @media (max-width: 500px) {
-  .product-card {
-    max-width: 175px;
-      &__head {
-      height: 220px;
-    }
-  }
-}
-@media (max-width: 360px) {
   .product-card {
     max-width: 150px;
     min-width: 145px;

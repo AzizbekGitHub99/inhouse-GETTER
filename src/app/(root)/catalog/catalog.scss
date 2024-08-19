@@ -8,19 +8,16 @@
       padding-right: 50px;
       border-right: solid 1px #e4e4e4;
       h3 {
-        // font-family: "Roboto";
         font-weight: 600;
         font-size: 20px;
         margin-bottom: 20px;
       }
       ul {
-        // font-family: "Roboto";
         font-weight: 600;
         font-size: 17px;
         margin-bottom: 60px;
         padding: 0;
         li {
-          // font-family: "Roboto";
           list-style: none;
           div {
             display: flex;
@@ -219,14 +216,14 @@
         flex-grow: 1;
         width: 100%;
         .image-box {
-          height: 200px;
+          height: 180px;
         }
       }
     }
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 500px) {
   .collection {
     &__cards {
       &__card {

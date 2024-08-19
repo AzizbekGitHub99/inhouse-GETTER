@@ -202,6 +202,7 @@
         align-items: center;
         .bottom-nav {
           display: flex;
+          align-items: center;
           gap: 5px;
           .active {
             background-color: var(--main-color-opacity);
@@ -264,6 +265,7 @@
 .nav-btns {
   display: flex;
   align-items: center;
+  white-space: nowrap;
   padding: 14px 24px;
   background-color: #0000000d;
   border-radius: 8px;
@@ -277,6 +279,9 @@
 }
 
 @media (max-width: 1150px) {
+  .nav-btns {
+    padding: 10px 20px;
+  }
   .header2 {
     top: 0;
     .top {
@@ -303,6 +308,9 @@
 }
 
 @media (max-width: 670px) {
+  .nav-btns {
+    padding: 10px 15px;
+  }
   .header2 {
     top: 0;
     .burger-menu {
