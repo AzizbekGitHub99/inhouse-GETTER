@@ -62,11 +62,13 @@ input {
 @media (max-width: 500px){
   .container{
     width: 98%;
+    min-width: 360px;
   }
 }
 @media (max-width: 360px){
   .container{
     width: 99%;
+    min-width: 340px;
   }
 }
 @media (max-width: 1300px){
