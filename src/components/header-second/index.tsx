@@ -18,9 +18,11 @@ import heart from "@/assets/icons/heart.svg";
 import paket from "@/assets/icons/paket.svg";
 
 const HeaderSecond = () => {
-  const cartProducts = useCartStore(state=> state.cartProducts)
+  const cartProducts = useCartStore((state) => state.cartProducts);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const ref = useDetectClickOutside({ onTriggered: () => setIsMenuOpen(false) });
+  const ref = useDetectClickOutside({
+    onTriggered: () => setIsMenuOpen(false),
+  });
   return (
     <header className="header2">
       <div className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
@@ -88,37 +90,23 @@ const HeaderSecond = () => {
                 <span>Избранные</span>
               </button>
               <button className="cart-btn">
-              <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts.length}</span>
+                <span
+                  className={cartProducts.length ? "in-cart" : "in-cart no"}
+                >
+                  {cartProducts.length}
+                </span>
                 <Image src={paket} width={13} height={12} alt="heart" />
                 <span>Оформить заказ</span>
               </button>
             </div>
             <div
+              ref={ref}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={isMenuOpen ? "burger isOpen" : "burger"}
             >
               <span></span>
               <span></span>
             </div>
-            {/* <div  className={isMenuOpen ? "burger-menu open" : "burger-menu"}>
-              <ul onClick={() => setIsMenuOpen(false)}>
-                <li>
-                  <NavLink href="/">Главная</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/about">О нас</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/catalog">Каталог продуктов</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/likes">Избранные</NavLink>
-                </li>
-                <li>
-                  <NavLink href="/cart">Оформить заказ</NavLink>
-                </li>
-              </ul>
-            </div> */}
           </div>
         </div>
       </div>
@@ -148,7 +136,11 @@ const HeaderSecond = () => {
                 <span>Избранные</span>
               </button>
               <button className="cart-btn">
-              <span className={cartProducts.length ? "in-cart" : "in-cart no"}>{cartProducts.length}</span>
+                <span
+                  className={cartProducts.length ? "in-cart" : "in-cart no"}
+                >
+                  {cartProducts.length}
+                </span>
                 <Image src={paket} width={13} height={12} alt="heart" />
                 <span>Оформить заказ</span>
               </button>

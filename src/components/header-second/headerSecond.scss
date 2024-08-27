@@ -2,6 +2,7 @@
 
 .header2 {
   position: sticky;
+  width: 1005;
   top: -90px;
   z-index: 15;
   background: white;
@@ -317,6 +318,7 @@
       display: block;
     }
     .top {
+      height: 75px;
       .top-container {
         .top-right {
           display: flex;
@@ -348,6 +350,7 @@
       }
     }
     .bottom {
+      height: 60px;
       .bottom-container {
         .bottom-left {
           display: none;
