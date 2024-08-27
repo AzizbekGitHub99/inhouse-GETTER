@@ -105,7 +105,8 @@
 // }
 @media (max-width: 500px) {
   .product-card {
-    max-width: 150px;
+    max-width: none;
+    flex: 1;
     min-width: 145px;
     &__head {
       height: 250px;

@@ -243,6 +243,7 @@
   .collection {
     &__cards {
       flex-wrap: wrap;
+      gap: 30px;
       &__card {
         flex-grow: 1;
         width: 100%;
