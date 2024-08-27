@@ -200,7 +200,7 @@
     &__cards {
       &__card {
         .image-box {
-          height: 230px;
+          height: 200px;
         }
       }
     }
@@ -210,7 +210,7 @@
     &__cards {
       &__card {
         .image-box {
-          height: 230px;
+          height: 200px;
         }
       }
     }
@@ -229,7 +229,7 @@
         flex-grow: 1;
         width: 100%;
         .image-box {
-          height: 200px;
+          height: 170px;
         }
       }
     }
@@ -247,7 +247,7 @@
         flex-grow: 1;
         width: 100%;
         .image-box {
-          height: 200px;
+          height: 170px;
         }
       }
     }
@@ -263,14 +263,14 @@
     &__cards {
       &__card {
         .image-box {
-          height: 170px;
+          height: 150px;
         }
       }
     }
   }
   .last-products{
     &__wrapper{
-      gap: 8px;
+      gap: 5px;
       justify-content: space-between;
     }
   }
@@ -279,7 +279,7 @@
     &__cards {
       &__card {
         .image-box {
-          height: 170px;
+          height: 150px;
         }
       }
     }
