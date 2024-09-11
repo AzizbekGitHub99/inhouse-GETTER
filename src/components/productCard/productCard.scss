@@ -15,6 +15,7 @@
     background-color: #efefef;
     img {
       transition: transform 0.3s linear;
+      offset: 0;
       object-fit: contain;
       object-position: center;
     }
@@ -95,14 +96,6 @@
     }
   }
 }
-// @media (max-width: 500px) {
-//   .product-card {
-//     max-width: 175px;
-//       &__head {
-//       height: 220px;
-//     }
-//   }
-// }
 @media (max-width: 500px) {
   .product-card {
     max-width: none;
